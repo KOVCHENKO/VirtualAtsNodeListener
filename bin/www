@@ -93,5 +93,6 @@ function onListening() {
 }
 
 var io = require('socket.io')(server);
+app.io = io;
 
 require("../src/connection")(io);

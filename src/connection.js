@@ -6,6 +6,7 @@ module.exports = function(io){
 
         var connectionName = socket.handshake.query['x-clientid'];
 
+        // Emitters and ons related to claims
         require("../src/connections/claim")(socket, io);
 
     });
