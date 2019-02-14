@@ -6,9 +6,17 @@ module.exports = function(io){
 
         var connectionName = socket.handshake.query['x-clientid'];
 
-        socket.on('disconnect', function () {
+        socket.emit('news', { hello: 'world' });
 
 
+        socket.on('claim_has_been_created', function (data) {
+            console.log('new claim in data');
+            io.emit('new_claim', { claim: 'data' });
+
+        });
+
+        socket.on('disconnect', function (data) {
+            console.log('client has been disconnected');
         });
     });
 
