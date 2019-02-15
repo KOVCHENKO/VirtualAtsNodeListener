@@ -5,15 +5,20 @@ var router = express.Router();
 router.post('/receive', function(req, res, next) {
 
     console.log(req.body.surname);
-
-    // logging of file
     const fs = require('fs');
-    fs.writeFile("./src/logs/call.log", JSON.stringify(req.body), function(err) {
+
+    // check if it works
+    fs.appendFile("./src/logs/call.log", 'fire new call', function(err) {
         if(err) {
             return console.log(err);
         }
+    });
 
-        console.log("The file was saved!");
+    // logging of file
+    fs.appendFile("./src/logs/call.log", JSON.stringify(req.body), function(err) {
+        if(err) {
+            return console.log(err);
+        }
     });
 
     req.app.io.emit('new_call', {key:"value"});
