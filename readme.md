@@ -11,3 +11,9 @@ npm run start
 Настройка порта:
 1. /bin/www
 2. Поменять порт можно в строке: var port = normalizePort(process.env.PORT || '3000');
+
+Docker reference:
+DockerHub: dmitry8912/devio:line_sockets_stable
+
+Or you may use a Dockerfile via "docker build -t tag ." command
+Then run "docker run -p 3000:3000 tag" to startup containter based on the locally stored images
