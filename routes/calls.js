@@ -5,7 +5,7 @@ var logger = require("../src/util/logger");
 var callEvents = require("../src/connections/call");
 
 /* GET incoming call. */
-router.post('/receive', function(req, res, next) {
+router.post('/receive', function(req, res) {
 
     logger(req.body);
 

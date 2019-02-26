@@ -8,4 +8,10 @@ module.exports = function(body){
             fs.appendFile("./src/logs/errors.log", JSON.stringify(err));
         }
     });
+
+    fs.appendFile("./src/logs/call.log", ",", function(err) {
+        if(err) {
+            fs.appendFile("./src/logs/errors.log", JSON.stringify(err));
+        }
+    });
 };
