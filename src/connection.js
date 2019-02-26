@@ -1,3 +1,5 @@
+const callEvents = require("../src/connections/call");
+
 module.exports = function(io){
 
     io.on('connection', function(socket) {
@@ -7,6 +9,9 @@ module.exports = function(io){
 
         // Emitters and ons related to claims
         require("../src/connections/claim")(socket, io);
+
+        // Emitters and ons related to calls
+        callEvents.listenToAcceptedCall(socket, io);
 
     });
 
