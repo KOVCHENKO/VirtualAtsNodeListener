@@ -9,7 +9,7 @@ module.exports = function(body){
         }
     });
 
-    fs.appendFile("./src/logs/incoming_calls.log", ",", function(err) {
+    fs.appendFile("./src/logs/incoming_calls.log", "\n", function(err) {
         if(err) {
             fs.appendFile("./src/logs/errors.log", JSON.stringify(err));
         }
